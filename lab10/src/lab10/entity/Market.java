@@ -61,7 +61,8 @@ public class Market {
     @Override
     public String toString() {
        StringBuilder builder;
-       builder = new StringBuilder("\t\t\t\t***Market show " + nameMarkete + "***\nList of available :\n");
+       builder = new StringBuilder("\t\t***Market show " + nameMarkete 
+               + "***\nList of available :\n");
        
         for ( int i = 0; i < catalogMarket.size(); i++) {
             

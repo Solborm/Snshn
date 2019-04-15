@@ -5,21 +5,30 @@ import lab10.entity.Market;
 import lab10.entity.Product;
 import lab10.view.Printer;
 import java.util.Scanner;
+import org.apache.log4j.Logger;
 
 
 public class MainMenu {
+    private static final Logger LOG;
+    
+    
+    static{
+        LOG=Logger.getRootLogger();
+    }
+    
     public static void main(String[] args) {
+        
         Scanner scanner= new Scanner(System.in);
         Market Ali= new Market();
         Ali.setNameMarkete("Aliexpress");
         Printer.print(Ali.toString());
         while(true){
-            System.out.print("1)Add seller"
-                    + "2)Add product"
-                    + "3)Delete seller"
-                    + "4)Delete Product"
-                    + "5)Catalog"
-                    + "6)Exit");
+            LOG.info("1)Add seller\n"
+                    + "2)Add product\n"
+                    + "3)Delete seller\n"
+                    + "4)Delete Product\n"
+                    + "5)Catalog\n"
+                    + "6)Exit\n");
             
             int choice=scanner.nextInt();
             
@@ -29,23 +38,23 @@ public class MainMenu {
                     break;
                 case 2:
                     Printer.print(Ali);
-                    System.out.print("Введите номер продовца ");
+                    LOG.info("input name of trader ");
                     int numberOfSellerAdd=scanner.nextInt();
                     Chinaman chinamanAdd=Ali.getSeller(numberOfSellerAdd);
                     chinamanAdd.addProduct();
                     break;
                 case 3:
                     Printer.print(Ali);
-                    System.out.print("Введите номер продовца ");
+                    LOG.info("input name of trader ");
                     int numberOfSellerDelete=scanner.nextInt();
                     Ali.deleteSeller(numberOfSellerDelete);
                     break;
                 case 4:
                     Printer.print(Ali);
-                    System.out.print("Введите номер продовца ");
+                    LOG.info("input name of trader ");
                     int numberOfSeller=scanner.nextInt();
                     Chinaman chinaman=Ali.getSeller(numberOfSeller);
-                    System.out.print("Введите номер продукта ");
+                    LOG.info("input name of trader ");
                     int numberOfProductDelete=scanner.nextInt();
                     chinaman.deleteProduct(numberOfProductDelete);
                     break;
@@ -55,7 +64,7 @@ public class MainMenu {
                 case 6:
                     return;    
                 default:
-                    System.out.println("Unknown Entry");
+                    LOG.info("Unknown Entry");
                     break;
             }
         }

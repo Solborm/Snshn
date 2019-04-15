@@ -1,23 +1,21 @@
 package lab10.entity;
 
 public class Product {
-    
+
     private String type;
     private double price;
     private String style;
     private String color;
     private String parametr;
 
-    
-    public Product(){
-        type="unknown";
-        price=0;
-        style="unknown";
-        color="unknown";
-        parametr="unknown";
+    public Product() {
+        type = "unknown";
+        price = 0;
+        style = "unknown";
+        color = "unknown";
+        parametr = "unknown";
     }
-    
-    
+
     public Product(Product product) {
         type = product.type;
         price = product.price;
@@ -25,8 +23,7 @@ public class Product {
         color = product.color;
         parametr = product.parametr;
     }
-    
-    
+
     public Product(String type, double price, String style, String color, String parametr) {
         this.type = type;
         this.price = price;
@@ -48,7 +45,7 @@ public class Product {
     }
 
     public void setPrice(double price) {
-        if(price>0){
+        if (price > 0) {
             this.price = price;
         }
     }
@@ -83,7 +80,5 @@ public class Product {
                 + "style=" + style + ", color=" + color + ", "
                 + "parametr=" + parametr + '}';
     }
-    
-    
-    
+
 }
